@@ -1,0 +1,27 @@
+=dos() 
+
+PROCEDURE uno 
+DECLARE INTEGER ShellExecute IN shell32.dll ; 
+  INTEGER hndWin, STRING cAction, STRING cFileName, ; 
+  STRING cParams, STRING cDir, INTEGER nShowWin 
+
+  ShellExecute(0,"open","C:\WINDOWS\system32\wiaacmgr.exe ","","",1) 
+
+
+RETURN 
+
+PROCEDURE dos 
+loShell = CREATEOBJECT("Shell.Application") 
+loShell.ShellExecute("C:\WINDOWS\system32\wiaacmgr.exe") 
+SUSPEND 
+loShell = .NULL. 
+RETURN 
+
+PROCEDURE tres 
+DECLARE LONG WinExec IN kernel32 ; 
+   STRING lpCmdLine , ; 
+   LONG nCmdShow 
+
+cComando="C:\WINDOWS\system32\wiaacmgr.exe " 
+
+WinExec(cComando, 1) &&0 - no se muestra (se ejecuta 

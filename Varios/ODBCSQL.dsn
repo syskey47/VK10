@@ -1,0 +1,9 @@
+[ODBC]
+DRIVER=SQL Server
+UID=gerardo
+DATABASE=VisualKey996
+WSID=GERARDO
+APP=Microsoft Visual FoxPro
+Trusted_Connection=Yes
+SERVER=GERARDO\SQLEXPRESS
+Description=VISUALKEYSQL

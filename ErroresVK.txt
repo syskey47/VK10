@@ -1,0 +1,641 @@
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/11/28 04:20:33 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 38
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE FRMDBF1.LOAD D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_ANTICIPOSDEUDORES.SCT
+               PROCEDURE INICIO.EJECUTAFORMULARIO D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : APPEND BLANK
+CODIGO ERROR : 1884
+MENSAJE      : Uniqueness of index ID is violated.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/11/28 04:20:36 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 38
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE FRMDBF1.LOAD D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_ANTICIPOSDEUDORES.SCT
+               PROCEDURE INICIO.EJECUTAFORMULARIO D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : APPEND BLANK
+CODIGO ERROR : 1884
+MENSAJE      : Uniqueness of index ID is violated.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/11/28 04:20:37 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 38
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE FRMDBF1.LOAD D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_ANTICIPOSDEUDORES.SCT
+               PROCEDURE INICIO.EJECUTAFORMULARIO D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : APPEND BLANK
+CODIGO ERROR : 1884
+MENSAJE      : Uniqueness of index ID is violated.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/11/28 04:20:37 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 38
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE FRMDBF1.LOAD D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_ANTICIPOSDEUDORES.SCT
+               PROCEDURE INICIO.EJECUTAFORMULARIO D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : APPEND BLANK
+CODIGO ERROR : 1884
+MENSAJE      : Uniqueness of index ID is violated.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/11/28 04:20:37 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 38
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE FRMDBF1.LOAD D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_ANTICIPOSDEUDORES.SCT
+               PROCEDURE INICIO.EJECUTAFORMULARIO D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : APPEND BLANK
+CODIGO ERROR : 1884
+MENSAJE      : Uniqueness of index ID is violated.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/11/28 04:20:37 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 38
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE FRMDBF1.LOAD D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_ANTICIPOSDEUDORES.SCT
+               PROCEDURE INICIO.EJECUTAFORMULARIO D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : APPEND BLANK
+CODIGO ERROR : 1884
+MENSAJE      : Uniqueness of index ID is violated.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/11/28 04:20:37 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 38
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE FRMDBF1.LOAD D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_ANTICIPOSDEUDORES.SCT
+               PROCEDURE INICIO.EJECUTAFORMULARIO D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : APPEND BLANK
+CODIGO ERROR : 1884
+MENSAJE      : Uniqueness of index ID is violated.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/11/28 04:20:38 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 38
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE FRMDBF1.LOAD D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_ANTICIPOSDEUDORES.SCT
+               PROCEDURE INICIO.EJECUTAFORMULARIO D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : APPEND BLANK
+CODIGO ERROR : 1884
+MENSAJE      : Uniqueness of index ID is violated.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/11/28 04:20:38 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 38
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE FRMDBF1.LOAD D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_ANTICIPOSDEUDORES.SCT
+               PROCEDURE INICIO.EJECUTAFORMULARIO D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : APPEND BLANK
+CODIGO ERROR : 1884
+MENSAJE      : Uniqueness of index ID is violated.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/11/28 04:20:38 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 38
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE FRMDBF1.LOAD D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_ANTICIPOSDEUDORES.SCT
+               PROCEDURE INICIO.EJECUTAFORMULARIO D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : APPEND BLANK
+CODIGO ERROR : 1884
+MENSAJE      : Uniqueness of index ID is violated.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:18:02 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 50
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : IF	_TALLY
+CODIGO ERROR : 9
+MENSAJE      : Data type mismatch.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:18:15 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 70
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : LOCATE FOR &lcCursor..Id = curMATRICULAS.IdDocumento
+CODIGO ERROR : 12
+MENSAJE      : Variable 'ID' is not found.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:18:18 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 70
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : LOCATE FOR &lcCursor..Id = curMATRICULAS.IdDocumento
+CODIGO ERROR : 12
+MENSAJE      : Variable 'ID' is not found.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:18:19 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 70
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : LOCATE FOR &lcCursor..Id = curMATRICULAS.IdDocumento
+CODIGO ERROR : 12
+MENSAJE      : Variable 'ID' is not found.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:18:20 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 70
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : LOCATE FOR &lcCursor..Id = curMATRICULAS.IdDocumento
+CODIGO ERROR : 12
+MENSAJE      : Variable 'ID' is not found.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:18:20 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 70
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : LOCATE FOR &lcCursor..Id = curMATRICULAS.IdDocumento
+CODIGO ERROR : 12
+MENSAJE      : Variable 'ID' is not found.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:19 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:25 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:26 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:26 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:26 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:27 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:27 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:27 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:27 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:28 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:28 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:29 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:29 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:29 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+
+
+========================================================================================================================
+PRODUCTO     : Visual Key  - [001] GIMNASIO MODERNO (2024-2025)
+MÓDULO       : CARTERA
+FECHA        : 2024/12/03 01:20:29 PM
+USUARIO      : ADMIN
+------------------------------------------------------------------------------------------------------------------------
+No. LINEA    : 73
+------------------------------------------------------------------------------------------------------------------------
+PROGRAMA     : PROCEDURE INFORMESALDOSDEDEUDORES.PREPAREINFORME D:\VK\VK10\FUENTES\FORMULARIOS\CARTERA\CAR_INF_SALDODEUDORES.SCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.VISTAPREVIA D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INFORMESALDOSDEDEUDORES.CMDGTOOLBAR.CMDVISTAPREVIA.CLICK D:\VK\VK10\FUENTES\CLASES\CFRMS70.VCT
+               PROCEDURE INICIO.EJECUTA D:\VK\VK10\FUENTES\CLASES\CAPLICACION.VCT
+               D:\VK\VK10\FUENTES\PROGRAMAS\INICIO.FXP
+               D:\VK\VK10\IT.FXP
+------------------------------------------------------------------------------------------------------------------------
+COMANDO      : DELETE
+CODIGO ERROR : 111
+MENSAJE      : Cannot update the cursor CURSALDODEUDORES, since it is read-only.
+------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,516 @@
+*
+* BUILDAPP - Build APP/EXE.
+*
+* Copyright (c) 1995 Microsoft Corp.
+* 1 Microsoft Way
+* Redmond, WA 98052
+*
+* Description:
+* Build application without Methods code in SCX/VCX.
+*
+LPARAMETERS tcProjectFile, ;
+		tcAPPFile, ;
+		tlDebugMode, ;
+		tlEXEMode
+		
+LOCAL oBuildAPP, ;
+	lcFileName
+
+*-- Classes
+#DEFINE CLASS_BUILDAPP				"BuildAPP"
+
+*-- Forms
+#DEFINE FORM_BUILDAPP				"BuildAPP.scx"
+
+*-- Titles
+#DEFINE T_BUILDAPP_LOC				"BuildAPP"
+
+*-- Messages
+#DEFINE M_SELECT_PROJECT_LOC		"Seleccione el archivo del proyecto"
+#DEFINE M_LOADING_BUILDAPP_LOC		"Cargando BuildAPP"
+#DEFINE M_BUILD_TEST_LOC			"Construyendo una prueba del proyecto"
+#DEFINE M_SAVING_METHODS_LOC		"Salvando métodos"
+#DEFINE M_RESTORING_METHODS_LOC		"Restaurando métodos"
+#DEFINE M_PROJECT_FILE_LOC			"Archivo de proyecto"
+#DEFINE M_DOES_NOT_EXIST_LOC		"no existe"
+#DEFINE M_INVALID_LOC				"invalido"
+#DEFINE M_CONTAINS_ERRORS_LOC		"contiene errores"
+#DEFINE M_UNABLE_TO_CREATE_LOC		"No se puede crear"
+#DEFINE M_METHOD_LOC				"Método:    "
+#DEFINE M_LINE_LOC					"Línea:         "
+#DEFINE M_COMPILING_FILE_LOC		"Compilando archivo"
+
+*-- MessageBox parameters
+#DEFINE MB_ICONEXCLAMATION   	 	48      && Warning message
+
+*-- If no parameters passed, execute BuildAPP dialog.
+lcFileName = FULLPATH(FORM_BUILDAPP, SYS(16))
+IF	PARAMETERS() = 0 AND FILE(lcFileName)
+	DO FORM (lcFileName) WITH tcProjectFile,tcAPPFile,tlDebugMode,tlEXEMode
+	RETURN
+ENDIF
+
+*-- Create instance object of class BuildAPP.
+oBuildAPP = CREATEOBJECT(CLASS_BUILDAPP, tcProjectFile, tcAPPFile, tlDebugMode, tlEXEMode)
+
+*-- Abort if object oBuildAPP does not exist.
+IF	ISNULL(oBuildAPP) OR TYPE("oBuildAPP") # "O"
+	RETURN .F.
+ENDIF
+
+*-- Abort if SaveDebugMode was unsuccessful.
+IF	! oBuildAPP.SaveDebugMode()
+	RETURN .F.
+ENDIF
+
+*-- Abort if BuildTest was unsuccessful.
+IF	! oBuildAPP.BuildTest()
+	RETURN .F.
+ENDIF
+
+*-- Build APP if SaveMethods was successful.
+IF	oBuildAPP.SaveMethods()
+	oBuildAPP.BUILD()
+ENDIF
+
+oBuildAPP.RestoreMethods()
+oBuildAPP.RestoreDebugMode()
+oBuildAPP.RestoreEnvironment()
+
+*-- Return .T. if BuildAPP process was successful, .F. if unsuccessful.
+RETURN (NOT oBuildAPP.lError)
+
+
+
+DEFINE CLASS BuildAPP AS CUSTOM
+
+
+	lError = .F.
+	lErrorFileCheck = .T.
+
+	PROTECTED cProjectFile, cAPPFile, lDebugMode, lEXEMode
+	PROTECTED cErrorFile, nFileCount, lLastDebugMode, nPJXHeaderRecNo
+	PROTECTED cSetDefault, cLastSetDefault
+	PROTECTED cLastSetESC, cLastSetExact, cLastSetSafety
+	PROTECTED cLastSetTalk, cLastSetMessage, nLastSelect
+	PROTECTED aFiles[1,2]
+	aFiles = ""
+	nFileCount = 0
+
+
+	PROTECTED FUNCTION INIT(tcProjectFile, tcAPPFile, tlDebugMode, tlEXEMode)
+		LOCAL lnAtPos
+
+*-- Initialize environment.
+		THIS.SaveEnvironment()
+		SET MESSAGE TO M_LOADING_BUILDAPP_LOC + " ..."
+		WAIT CLEAR
+		THIS.lDebugMode = tlDebugMode
+		THIS.lEXEMode = tlEXEMode
+
+*-- Initialize project (PJX) file name.
+		THIS.cProjectFile = IIF(EMPTY(tcProjectFile), "", ALLTRIM(tcProjectFile))
+		IF	EMPTY(THIS.cProjectFile)
+			THIS.cProjectFile = GETFILE("pjx", M_SELECT_PROJECT_LOC + ":")
+			IF	! EMPTY(THIS.cProjectFile) AND ! "." $ THIS.cProjectFile
+				THIS.cProjectFile = THIS.cProjectFile + ".pjx"
+			ENDIF
+		ELSE
+			IF	! "." $ THIS.cProjectFile
+				THIS.cProjectFile = THIS.cProjectFile + ".pjx"
+			ENDIF
+			THIS.cProjectFile = FULLPATH(THIS.cProjectFile)
+		ENDIF
+		IF	EMPTY(THIS.cProjectFile)
+			THIS.RestoreEnvironment()
+			RETURN .F.
+		ENDIF
+		IF	! FILE(THIS.cProjectFile)
+			THIS.MsgBox(M_PROJECT_FILE_LOC + " '" + LOWER(THIS.cProjectFile) + "' " + ;
+				M_DOES_NOT_EXIST_LOC + ".")
+			THIS.RestoreEnvironment()
+			RETURN .F.
+		ENDIF
+
+*-- Initialize application (APP) file name.
+		THIS.cAPPFile = IIF(EMPTY(tcAPPFile), "", ALLTRIM(tcAPPFile))
+		IF	EMPTY(THIS.cAPPFile)
+			lnAtPos = AT(".", THIS.cProjectFile)
+			THIS.cAPPFile = IIF(lnAtPos>0, LEFT(THIS.cProjectFile, lnAtPos-1), ;
+				THIS. cProjectFile)
+		ENDIF
+		THIS.cAPPFile = ALLTRIM(THIS.cAPPFile)
+		IF	! "." $ THIS.cAPPFile
+			THIS.cAPPFile = THIS.cAPPFile + IIF(THIS.lEXEMode, ".exe", ".app")
+		ELSE
+*-- .EXE file name for tcAPPFile automatically sets EXE mode on.
+			IF	! THIS.lEXEMode AND LOWER(RIGHT(THIS.cAPPFile, 4)) == ".exe"
+				THIS.lEXEMode = .T.
+			ENDIF
+		ENDIF
+		IF	! "\" $ THIS.cAPPFile AND ! ":" $ THIS.cAPPFile
+			THIS.cAPPFile = FULLPATH(THIS.cAPPFile, THIS.cProjectFile)
+		ENDIF
+
+*-- Initialize error (ERR) file name.
+		THIS.cErrorFile = THIS.cAPPFile
+		lnAtPos = AT(".", THIS.cErrorFile)
+		IF	lnAtPos > 0
+			THIS.cErrorFile = LEFT(THIS.cErrorFile, lnAtPos - 1) + ".err"
+		ENDIF
+		THIS.cLastSetDefault = SET('DEFAULT') + SYS(2003)
+		lnAtPos = RAT('\', THIS.cProjectFile)
+		THIS.cSetDefault = ALLTRIM(IIF(lnAtPos = 0, THIS.cProjectFile, ;
+			LEFT(THIS.cProjectFile, lnAtPos)))
+		CD (THIS.cSetDefault)
+	ENDFUNC
+
+
+	FUNCTION SaveDebugMode
+		LOCAL lcType
+
+	*-- Open project.
+		IF	USED("project")
+			USE IN PROJECT
+		ENDIF
+		SELECT 0
+		USE (THIS.cProjectFile) EXCLUSIVE ALIAS PROJECT
+		IF	THIS.lError OR ! USED("project")
+			THIS.RestoreEnvironment()
+			RETURN .F.
+		ENDIF
+		SET FILTER TO NOT DELETED()
+
+	*-- Locate header record.
+		lcType = TYPE("Type")
+		IF	lcType == "C"
+			LOCATE FOR TYPE == "H"
+		ENDIF
+		IF	lcType # "C" OR EOF()
+			USE IN PROJECT
+			THIS.MsgBox(M_PROJECT_FILE_LOC + " '" + LOWER(THIS.cProjectFile) + "' " + ;
+				M_INVALID_LOC + ".")
+			THIS.RestoreEnvironment()
+			RETURN .F.
+		ENDIF
+
+	*-- Save current project debug mode setting.
+		THIS.lLastDebugMode = DEBUG
+		IF	THIS.lDebugMode # THIS.lLastDebugMode
+			THIS.nPJXHeaderRecNo = RECNO()
+			REPLACE DEBUG WITH THIS.lDebugMode
+		ENDIF
+
+	*-- Force re-compile for all programs.
+		REPLACE ALL TIMESTAMP WITH 0
+
+	*-- Force compile for all SCX/VCX files.
+		SCAN ALL FOR NOT Exclude AND TYPE == "K" OR TYPE = "V"
+
+	*-- Convert file name in project to valid name.
+			lcFileName = FULLPATH(ALLTRIM(STRTRAN(NAME, CHR(0), "")), THIS.cProjectFile)
+
+	*-- Force compile.
+			SET MESSAGE TO M_COMPILING_FILE_LOC+ ":  " + ;
+				LOWER(lcFileName)
+			COMPILE FORM (lcFileName)
+
+		ENDSCAN
+	*-- Close project.
+		USE IN PROJECT
+		IF	THIS.lError
+			THIS.RestoreEnvironment()
+			RETURN .F.
+		ENDIF
+	ENDFUNC
+
+
+	FUNCTION BuildTest
+
+		SET MESSAGE TO M_BUILD_TEST_LOC + ":  " + LOWER(THIS.cProjectFile)
+		THIS.BUILD()
+		IF	THIS.lError
+			THIS.RestoreEnvironment()
+			RETURN .F.
+		ENDIF
+		IF	! FILE(THIS.cAPPFile)
+			THIS.MsgBox(M_UNABLE_TO_CREATE_LOC + " '" + LOWER(THIS.cAPPFile) + "'.")
+			THIS.RestoreEnvironment()
+			RETURN .F.
+		ENDIF
+		IF	THIS.lErrorFileCheck AND FILE(THIS.cErrorFile)
+			MODIFY FILE (THIS.cErrorFile) NOEDIT NOWAIT
+			THIS.MsgBox(M_PROJECT_FILE_LOC + " '" + LOWER(THIS.cProjectFile) + "' " + ;
+				M_CONTAINS_ERRORS_LOC + ".")
+			THIS.RestoreEnvironment()
+			RETURN .F.
+		ENDIF
+		ERASE (THIS.cAPPFile)
+	ENDFUNC
+
+
+	FUNCTION SaveMethods
+		LOCAL lnCount, lnChildCount, lcTempFile, lcFileName
+
+	*-- Open project.
+		IF	USED("project")
+			USE IN PROJECT
+		ENDIF
+		SELECT 0
+		USE (THIS.cProjectFile) EXCLUSIVE ALIAS PROJECT
+		IF	THIS.lError OR ! USED("project")
+			THIS.RestoreEnvironment()
+			RETURN .F.
+		ENDIF
+		SET FILTER TO NOT DELETED()
+
+	*-- Remove Methods field from all included SCX/VCX files.
+		SCAN ALL FOR ! Exclude AND TYPE == "K" OR TYPE = "V"
+
+	*-- Convert file name in project to valid name.
+			lcFileName = FULLPATH(ALLTRIM(STRTRAN(NAME, CHR(0), "")), THIS.cProjectFile)
+
+	*-- Increment SCX/VCX file counter and file name array.
+			THIS.nFileCount = THIS.nFileCount + 1
+			DIMENSION THIS.aFiles[THIS.nFileCount, 2]
+			THIS.aFiles[THIS.nFileCount, 1] = lcFileName
+			THIS.aFiles[THIS.nFileCount, 2] = FULLPATH("_" + ;
+				IIF(TYPE == "K", "SCX", "VCX") + ALLTRIM(STR(THIS.nFileCount)), ;
+				THIS.aFiles[THIS.nFileCount, 1])
+
+	*-- Open metadata SCX/VCX file.
+			SET MESSAGE TO M_SAVING_METHODS_LOC + ":  " + ;
+				LOWER(lcFileName)
+			IF	USED("metadata")
+				USE IN metadata
+			ENDIF
+			SELECT 0
+			USE (lcFileName) EXCLUSIVE ALIAS metadata
+			IF	THIS.lError OR ! USED("metadata")
+				THIS.nFileCount = THIS.nFileCount - 1
+				THIS.RestoreMethods()
+				THIS.RestoreEnvironment()
+	*-- Close project.
+				IF	USED("project")
+					USE IN PROJECT
+				ENDIF
+				RETURN .F.
+			ENDIF
+
+	*-- Pack SCX/VCX table.
+			PACK
+			IF	THIS.lError
+				THIS.RestoreEnvironment()
+				RETURN .F.
+			ENDIF
+
+	*-- Create temporary table containing backup Methods field.
+			COPY TO (THIS.aFiles[THIS.nFileCount, 2]) FIELDS Methods
+
+	*-- Remove all Methods code from SCX/VCX table.
+			REPLACE ALL Methods WITH ""
+
+	*-- Copy SCX/VCX table out to temporary table and restore.
+	*   to completely pack memo fields in SCT/VCT files.
+			lcTempFile = SYS(3)
+			COPY TO (lcTempFile)
+			ZAP
+			APPEND FROM (lcTempFile)
+			USE IN metadata
+			ERASE (lcTempFile + ".dbf")
+			ERASE (lcTempFile + ".fpt")
+			IF	THIS.lError
+				THIS.RestoreEnvironment()
+				RETURN .F.
+			ENDIF
+
+		ENDSCAN
+	*-- Close project.
+		IF	USED("project")
+			USE IN PROJECT
+		ENDIF
+	ENDFUNC
+
+
+	FUNCTION BUILD
+
+	*-- Close project.
+		IF	USED("project")
+			USE IN PROJECT
+		ENDIF
+	*-- Build APP/EXE with method code in SCX/VCX files to test for errors.
+		SET MESSAGE TO ""
+		IF	THIS.lEXEMode
+			BUILD EXE (THIS.cAPPFile) FROM (THIS.cProjectFile)
+		ELSE
+			BUILD APP (THIS.cAPPFile) FROM (THIS.cProjectFile)
+		ENDIF
+	ENDFUNC
+
+
+	FUNCTION RestoreMethods
+		LOCAL lnCount, lnRecNo
+
+	*-- Restore Methods field to all included SCX/VCX files.
+		FOR lnCount = 1 TO THIS.nFileCount
+
+	*-- Open metadata SCX/VCX file.
+			SET MESSAGE TO M_RESTORING_METHODS_LOC + ":  " + LOWER(THIS.aFiles[lnCount, 1])
+			IF	USED("metadata")
+				USE IN metadata
+			ENDIF
+			SELECT 0
+			USE (THIS.aFiles[lnCount, 1]) IN 0 ALIAS metadata EXCLUSIVE
+			IF	THIS.lError OR ! USED("metadata")
+				THIS.lError = .F.
+				LOOP
+			ENDIF
+
+	*-- Open temporary table containing backup Methods field.
+			IF	USED("methods")
+				USE IN Methods
+			ENDIF
+			SELECT 0
+			USE (THIS.aFiles[lnCount, 2]) IN 0 ALIAS Methods EXCLUSIVE
+			IF	THIS.lError OR ! USED("methods")
+				THIS.lError = .F.
+				LOOP
+			ENDIF
+
+	*-- Restore Methods field in SCX/VCX table from temporary backup table.
+			SCAN ALL FOR ! EMPTY(Methods)
+				lnRecNo = RECNO()
+				SELECT metadata
+				GO lnRecNo
+				REPLACE Methods WITH Methods.Methods
+				SELECT Methods
+			ENDSCAN
+
+	*-- Close SCX/VCX and temporary Methods field backup table.
+			USE IN metadata
+			USE IN Methods
+
+	*-- Delete temporary Methods field backup table files.
+			*!* ERASE (THIS.aFiles[lnCount, 2] + ".dbf")
+			*!* ERASE (THIS.aFiles[lnCount, 2] + ".fpt")
+
+		ENDFOR
+	ENDFUNC
+
+
+	FUNCTION RestoreDebugMode
+
+		IF	THIS.lDebugMode = THIS.lLastDebugMode
+			RETURN
+		ENDIF
+
+	*-- Open project.
+		IF	USED("project")
+			USE IN PROJECT
+		ENDIF
+		SELECT 0
+		USE (THIS.cProjectFile) EXCLUSIVE ALIAS PROJECT
+
+	*-- Restore current project debug mode setting.
+		GO THIS.nPJXHeaderRecNo
+		REPLACE DEBUG WITH THIS.lLastDebugMode
+
+		USE IN PROJECT
+	ENDFUNC
+
+
+	PROTECTED FUNCTION SaveEnvironment
+
+*-- Save environment settings.
+		THIS.cLastSetESC = SET("ESCAPE")
+		SET ESCAPE OFF
+		THIS.cLastSetExact = SET("EXACT")
+		SET EXACT OFF
+		THIS.cLastSetSafety = SET("SAFETY")
+		SET SAFETY OFF
+		THIS.cLastSetTalk = SET("TALK")
+		SET TALK OFF
+		THIS.cLastSetMessage = SET("MESSAGE",1)
+		SET MESSAGE TO ""
+		THIS.nLastSelect = SELECT()
+	ENDFUNC
+
+
+	FUNCTION RestoreEnvironment
+
+	*-- Restore environment settings.
+		IF	USED("project")
+			USE IN PROJECT
+		ENDIF
+		IF	USED("metadata")
+			USE IN metadata
+		ENDIF
+		IF	USED("methods")
+			USE IN Methods
+		ENDIF
+		IF	! EMPTY(THIS.cLastSetDefault)
+			CD (THIS.cLastSetDefault)
+		ENDIF
+		SELECT (THIS.nLastSelect)
+		IF	THIS.cLastSetExact == "ON"
+			SET EXACT ON
+		ELSE
+			SET EXACT OFF
+		ENDIF
+		IF	THIS.cLastSetSafety == "ON"
+			SET SAFETY ON
+		ELSE
+			SET SAFETY OFF
+		ENDIF
+		IF	THIS.cLastSetTalk == "ON"
+			SET TALK ON
+		ELSE
+			SET TALK OFF
+		ENDIF
+		IF	EMPTY(THIS.cLastSetMessage)
+			SET MESSAGE TO
+		ELSE
+			SET MESSAGE TO (THIS.cLastSetMessage)
+		ENDIF
+		IF	THIS.cLastSetESC == "ON"
+			SET ESCAPE ON
+		ELSE
+			SET ESCAPE OFF
+		ENDIF
+	ENDFUNC
+
+
+	PROTECTED FUNCTION MsgBox(tcMessage, tnType, tcTitle)
+		LOCAL lcMessage, lnType, lcTitle, lnResult
+
+		SET MESSAGE TO ""
+		lcMessage = IIF(EMPTY(tcMessage), '', tcMessage)
+		lnType = IIF(EMPTY(tnType), MB_ICONEXCLAMATION, tnType)
+		lcTitle = IIF(EMPTY(lcTitle), T_BUILDAPP_LOC, lcTitle)
+		lnResult = MESSAGEBOX(lcMessage, lnType, lcTitle)
+		RETURN lnResult
+	ENDFUNC
+
+
+	PROTECTED FUNCTION ERROR(nError, cMethod, nLine)
+		LOCAL lcErrorMsg, lcCodeLineMsg
+
+*-- Display error handler dialog.
+		WAIT CLEAR
+		THIS.lError = .T.
+		lcErrorMsg = MESSAGE() + CHR(13) + CHR(13) + ;
+			M_METHOD_LOC + cMethod + CHR(13) + ;
+			M_LINE_LOC + ALLTRIM(STR(nLine))
+		lcCodeLineMsg = MESSAGE(1)
+		IF	! EMPTY(lcCodeLineMsg)
+			lcErrorMsg = lcErrorMsg + CHR(13) + CHR(13) + lcCodeLineMsg
+		ENDIF
+		THIS.MsgBox(lcErrorMsg)
+	ENDFUNC
+
+
+ENDDEFINE
+
+
+
+*-- end: BUILDAPP.PRG

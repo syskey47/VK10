@@ -1,0 +1,307 @@
+*!* SET STEP ON 
+
+*!* PADRES / MADRES / ACUDIENTES / CONTACTOS
+SELECT 'P' AS TipoReg, ;
+		CTB_NITS.TipoNit, ;
+		CTB_NITS.Nit, ;
+		CTB_NITS.Nombre, ;
+		CTB_NITS.Direccion, ;
+		CTB_CIUDADES.Ciudad, ;
+		CTB_NITS.Telefonos, ;
+		CTB_NITS.Celular, ;
+		CTB_NITS.EMail, ;
+		CTB_NITS.Profesion, ;
+		IIF(CTB_NITS.EsExalumno, 'SI', '  ') AS EsExalumno, ;
+		CTB_NITS.Promocion, ;
+		CTB_NITS.Parentesco, ;
+		CTB_NITS.BancoDeudor, ;
+		CTB_NITS.CuentaDeudor, ;
+		IIF(EMPTY(CTB_NITS.FechaNacimiento), SPACE(10), TRANSFORM(DTOS(CTB_NITS.FechaNacimiento), '@R 9999-99-99')) AS FechaNacimiento, ;
+		IIF(EMPTY(CTB_NITS.FechaIngreso), SPACE(10), TRANSFORM(DTOS(CTB_NITS.FechaIngreso), '@R 9999-99-99')) AS FechaIngreso ;
+	FROM NTA_MATRICULAS ;
+		INNER JOIN NTA_ALUMNOS ;
+			ON NTA_MATRICULAS.IdAlumno = NTA_ALUMNOS.Id ;
+		INNER JOIN CTB_NITS ;
+			ON NTA_ALUMNOS.IdNitPadre = CTB_NITS.Id ;
+		LEFT JOIN CTB_CIUDADES ;
+			ON CTB_NITS.IdCiudad = CTB_CIUDADES.Id ;
+	WHERE ! EMPTY(NTA_MATRICULAS.Referencia) AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 2 AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 3 ;
+UNION ( ;
+SELECT 'M' AS TipoReg, ;
+		CTB_NITS.TipoNit, ;
+		CTB_NITS.Nit, ;
+		CTB_NITS.Nombre, ;
+		CTB_NITS.Direccion, ;
+		CTB_CIUDADES.Ciudad, ;
+		CTB_NITS.Telefonos, ;
+		CTB_NITS.Celular, ;
+		CTB_NITS.EMail, ;
+		CTB_NITS.Profesion, ;
+		IIF(CTB_NITS.EsExalumno, 'SI', '  ') AS EsExalumno, ;
+		CTB_NITS.Promocion, ;
+		CTB_NITS.Parentesco, ;
+		CTB_NITS.BancoDeudor, ;
+		CTB_NITS.CuentaDeudor, ;
+		IIF(EMPTY(CTB_NITS.FechaNacimiento), SPACE(10), TRANSFORM(DTOS(CTB_NITS.FechaNacimiento), '@R 9999-99-99')) AS FechaNacimiento, ;
+		IIF(EMPTY(CTB_NITS.FechaIngreso), SPACE(10), TRANSFORM(DTOS(CTB_NITS.FechaIngreso), '@R 9999-99-99')) AS FechaIngreso ;
+	FROM NTA_MATRICULAS ;
+		INNER JOIN NTA_ALUMNOS ;
+			ON NTA_MATRICULAS.IdAlumno = NTA_ALUMNOS.Id ;
+		INNER JOIN CTB_NITS ;
+			ON NTA_ALUMNOS.IdNitMadre = CTB_NITS.Id ;
+		LEFT JOIN CTB_CIUDADES ;
+			ON CTB_NITS.IdCiudad = CTB_CIUDADES.Id ;
+	WHERE ! EMPTY(NTA_MATRICULAS.Referencia) AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 2 AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 3 ) ;
+UNION ( ;
+SELECT 'A' AS TipoReg, ;
+		CTB_NITS.TipoNit, ;
+		CTB_NITS.Nit, ;
+		CTB_NITS.Nombre, ;
+		CTB_NITS.Direccion, ;
+		CTB_CIUDADES.Ciudad, ;
+		CTB_NITS.Telefonos, ;
+		CTB_NITS.Celular, ;
+		CTB_NITS.EMail, ;
+		CTB_NITS.Profesion, ;
+		IIF(CTB_NITS.EsExalumno, 'SI', '  ') AS EsExalumno, ;
+		CTB_NITS.Promocion, ;
+		CTB_NITS.Parentesco, ;
+		CTB_NITS.BancoDeudor, ;
+		CTB_NITS.CuentaDeudor, ;
+		IIF(EMPTY(CTB_NITS.FechaNacimiento), SPACE(10), TRANSFORM(DTOS(CTB_NITS.FechaNacimiento), '@R 9999-99-99')) AS FechaNacimiento, ;
+		IIF(EMPTY(CTB_NITS.FechaIngreso), SPACE(10), TRANSFORM(DTOS(CTB_NITS.FechaIngreso), '@R 9999-99-99')) AS FechaIngreso ;
+	FROM NTA_MATRICULAS ;
+		INNER JOIN NTA_ALUMNOS ;
+			ON NTA_MATRICULAS.IdAlumno = NTA_ALUMNOS.Id ;
+		INNER JOIN CTB_NITS ;
+			ON NTA_ALUMNOS.IdNitAcudiente = CTB_NITS.Id ;
+		LEFT JOIN CTB_CIUDADES ;
+			ON CTB_NITS.IdCiudad = CTB_CIUDADES.Id ;
+	WHERE ! EMPTY(NTA_MATRICULAS.Referencia) AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 2 AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 3 ) ;
+UNION ( ;
+SELECT 'C' AS TipoReg, ;
+		CTB_NITS.TipoNit, ;
+		CTB_NITS.Nit, ;
+		CTB_NITS.Nombre, ;
+		CTB_NITS.Direccion, ;
+		CTB_CIUDADES.Ciudad, ;
+		CTB_NITS.Telefonos, ;
+		CTB_NITS.Celular, ;
+		CTB_NITS.EMail, ;
+		CTB_NITS.Profesion, ;
+		IIF(CTB_NITS.EsExalumno, 'SI', '  ') AS EsExalumno, ;
+		CTB_NITS.Promocion, ;
+		CTB_NITS.Parentesco, ;
+		CTB_NITS.BancoDeudor, ;
+		CTB_NITS.CuentaDeudor, ;
+		IIF(EMPTY(CTB_NITS.FechaNacimiento), SPACE(10), TRANSFORM(DTOS(CTB_NITS.FechaNacimiento), '@R 9999-99-99')) AS FechaNacimiento, ;
+		IIF(EMPTY(CTB_NITS.FechaIngreso), SPACE(10), TRANSFORM(DTOS(CTB_NITS.FechaIngreso), '@R 9999-99-99')) AS FechaIngreso ;
+	FROM NTA_MATRICULAS ;
+		INNER JOIN NTA_ALUMNOS ;
+			ON NTA_MATRICULAS.IdAlumno = NTA_ALUMNOS.Id ;
+		INNER JOIN CTB_NITS ;
+			ON NTA_ALUMNOS.IdNitContacto = CTB_NITS.Id ;
+		LEFT JOIN CTB_CIUDADES ;
+			ON CTB_NITS.IdCiudad = CTB_CIUDADES.Id ;
+	WHERE ! EMPTY(NTA_MATRICULAS.Referencia) AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 2 AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 3 ) ;
+	ORDER BY CTB_NITS.Nit ;
+	INTO CURSOR curNITS
+
+IF	_TALLY > 0
+	COPY TO NitsAcudientes TYPE XL5
+ENDIF
+
+*!* EPS
+SELECT CTB_NITS.TipoNit, ;
+		CTB_NITS.Nit, ;
+		CTB_NITS.Nombre, ;
+		CTB_NITS.Direccion, ;
+		CTB_CIUDADES.Ciudad, ;
+		CTB_NITS.Telefonos, ;
+		CTB_NITS.Celular, ;
+		CTB_NITS.EMail, ;
+		IIF(EMPTY(CTB_NITS.FechaIngreso), SPACE(10), TRANSFORM(DTOS(CTB_NITS.FechaIngreso), '@R 9999-99-99')) AS FechaIngreso ;
+	FROM NTA_MATRICULAS ;
+		INNER JOIN NTA_ALUMNOS ;
+			ON NTA_MATRICULAS.IdAlumno = NTA_ALUMNOS.Id ;
+		INNER JOIN CTB_NITS ;
+			ON NTA_ALUMNOS.IdNitEPS = CTB_NITS.Id ;
+		LEFT JOIN CTB_CIUDADES ;
+			ON CTB_NITS.IdCiudad = CTB_CIUDADES.Id ;
+	WHERE ! EMPTY(NTA_MATRICULAS.Referencia) AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 2 AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 3 ;
+	ORDER BY CTB_NITS.Nit ;
+	INTO CURSOR curEPS
+
+IF	_TALLY > 0
+	COPY TO NitsEPS TYPE XL5
+ENDIF
+	
+*!* ALUMNOS
+SELECT DISTINCT NTA_ALUMNOS.Alumno AS Codigo, ;
+		NTA_ALUMNOS.Nombre, ;
+		NTA_ALUMNOS.TipoIdentificacionAlumno AS TipoIdentificacion, ;
+		NTA_ALUMNOS.Nit AS Nit, ;
+		NTA_ALUMNOS.LibretaMilitar, ;
+		NTA_ALUMNOS.DistritoMilitar, ;
+		IIF(EMPTY(NTA_ALUMNOS.FechaIngreso), SPACE(10), TRANSFORM(DTOS(NTA_ALUMNOS.FechaIngreso), '@R 9999-99-99')) AS FechaIngreso, ;
+		NTA_ALUMNOS.Direccion, ;
+		NTA_ALUMNOS.Barrio, ;
+		NTA_ALUMNOS.Estrato, ;
+		CTB_CIUDADES.Ciudad, ;
+		NTA_ALUMNOS.Telefonos, ;
+		NTA_ALUMNOS.Celular, ;
+		NTA_ALUMNOS.EMail, ;
+		IIF(EMPTY(NTA_ALUMNOS.FechaNacimiento), SPACE(10), TRANSFORM(DTOS(NTA_ALUMNOS.FechaNacimiento), '@R 9999-99-99')) AS FechaNacimiento, ;
+		CIUDADES.Ciudad AS CiudadNacimiento, ;
+		NTA_ALUMNOS.Genero, ;
+		NTA_ALUMNOS.FactorRH, ;
+		PADRES.Nit AS NitPadre, ;
+		MADRES.Nit AS NitMadre, ;
+		ACUDIENTES.Nit AS NitAcudiente, ;
+		CONTACTOS.Nit AS NitContacto, ;
+		EPS.Nit AS NitEPS ;
+	FROM NTA_MATRICULAS ;
+		INNER JOIN NTA_ALUMNOS ;
+			ON NTA_MATRICULAS.IdAlumno = NTA_ALUMNOS.Id ;
+		LEFT JOIN CTB_CIUDADES ;
+			ON NTA_ALUMNOS.IdCiudad = CTB_CIUDADES.Id ;
+		LEFT JOIN CTB_CIUDADES AS CIUDADES ;
+			ON NTA_ALUMNOS.IdCiudadNacimiento = CIUDADES.Id ;
+		LEFT JOIN CTB_NITS AS PADRES ;
+			ON NTA_ALUMNOS.IdNitPadre = PADRES.Id ;
+		LEFT JOIN CTB_NITS AS MADRES ;
+			ON NTA_ALUMNOS.IdNitMadre = MADRES.Id ;
+		LEFT JOIN CTB_NITS AS ACUDIENTES ;
+			ON NTA_ALUMNOS.IdNitAcudiente = ACUDIENTES.Id ;
+		LEFT JOIN CTB_NITS AS CONTACTOS ;
+			ON NTA_ALUMNOS.IdNitContacto = CONTACTOS.Id ;
+		LEFT JOIN CTB_NITS AS EPS ;
+			ON NTA_ALUMNOS.IdNitEPS = EPS.Id ;
+	WHERE ! EMPTY(NTA_MATRICULAS.Referencia) AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 2 AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 3 ;
+	ORDER BY NTA_ALUMNOS.Nombre ;
+	INTO CURSOR curALUMNOS
+
+IF	_TALLY > 0
+	COPY TO Estudiantes TYPE XL5
+ENDIF
+
+*!* MATRICULAS
+SELECT NTA_MATRICULAS.Referencia, ;
+		NTA_MATRICULAS.Matricula, ;
+		IIF(EMPTY(NTA_MATRICULAS.Fecha), SPACE(10), TRANSFORM(DTOS(NTA_MATRICULAS.Fecha), '@R 9999-99-99')) AS Fecha, ;
+		IIF(EMPTY(NTA_MATRICULAS.FechaRetiro), SPACE(10), TRANSFORM(DTOS(NTA_MATRICULAS.FechaRetiro), '@R 9999-99-99')) AS FechaRetiro, ;
+		NTA_MATRICULAS.EstadoAlumno AS Estado, ;
+		NTA_MATRICULAS.TipoAlumno AS TipoEstudiante, ;
+		NTA_GRADOS.Grado, ;
+		NTA_MATRICULAS.Curso, ;
+		GRADOS.Grado AS Grado2, ;
+		NTA_MATRICULAS.Curso2, ;
+		NTA_TRANSPORTE.Ruta, ;
+		NTA_MATRICULAS.Parada, ;
+		NTA_MATRICULAS.Direccion, ;
+		NTA_MATRICULAS.Direccion_2, ;
+		NTA_MATRICULAS.Barrio, ;
+		TRANSPORTE1.Ruta AS Ruta1, ;
+		NTA_MATRICULAS.Parada1, ;
+		NTA_MATRICULAS.Direccion1, ;
+		NTA_MATRICULAS.Direccion1_2, ;
+		NTA_MATRICULAS.Barrio1, ;
+		TRANSPORTE2.Ruta AS Ruta2, ;
+		NTA_MATRICULAS.Parada2, ;
+		NTA_MATRICULAS.Direccion2, ;
+		NTA_MATRICULAS.Direccion2_2, ;
+		NTA_MATRICULAS.Barrio2, ;
+		TRANSPORTE3.Ruta AS Ruta3, ;
+		NTA_MATRICULAS.Parada3, ;
+		NTA_MATRICULAS.Direccion3, ;
+		NTA_MATRICULAS.Direccion3_2, ;
+		NTA_MATRICULAS.Barrio3, ;
+		NTA_MATRICULAS.InscritoPeriodoSiguiente, ;
+		NTA_MATRICULAS.ObservacionesDirector, ;
+		NTA_MATRICULAS.ObservacionesPeriodo1, ;
+		NTA_MATRICULAS.ObservacionesPeriodo2, ;
+		NTA_MATRICULAS.ObservacionesPeriodo3, ;
+		NTA_MATRICULAS.ObservacionesPeriodo4, ;
+		NTA_MATRICULAS.ObservacionesPeriodo5, ;
+		NTA_MATRICULAS.ObservacionesAdmision, ;
+		NTA_MATRICULAS.Bloqueado, ;
+		NTA_ALUMNOS.Alumno AS Codigo ;
+	FROM NTA_MATRICULAS ;
+		INNER JOIN NTA_GRADOS ;
+			ON NTA_MATRICULAS.IdGrado = NTA_GRADOS.Id ;
+		INNER JOIN NTA_ALUMNOS ;
+			ON NTA_MATRICULAS.IdAlumno= NTA_ALUMNOS.Id ;
+		LEFT JOIN NTA_GRADOS AS GRADOS ;
+			ON NTA_MATRICULAS.IdGrado2 = GRADOS.Id ;
+		LEFT JOIN NTA_TRANSPORTE ;
+			ON NTA_MATRICULAS.IdRuta = NTA_TRANSPORTE.Id ;
+		LEFT JOIN NTA_TRANSPORTE AS TRANSPORTE1 ;
+			ON NTA_MATRICULAS.IdRuta1 = TRANSPORTE1.Id ;
+		LEFT JOIN NTA_TRANSPORTE AS TRANSPORTE2 ;
+			ON NTA_MATRICULAS.IdRuta2 = TRANSPORTE2.Id ;
+		LEFT JOIN NTA_TRANSPORTE AS TRANSPORTE3 ;
+			ON NTA_MATRICULAS.IdRuta3 = TRANSPORTE3.Id ;
+	WHERE ! EMPTY(NTA_MATRICULAS.Referencia) AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 2 AND ;
+		NTA_MATRICULAS.EstadoAlumno <> 3 ;
+	ORDER BY NTA_MATRICULAS.Referencia, NTA_MATRICULAS.Matricula ;
+	INTO CURSOR curMATRICULAS
+
+IF	_TALLY > 0
+	COPY TO Matriculas TYPE XL5
+ENDIF 
+
+*!* DOCUMENTOS POR ALUMNO
+SELECT NTA_ALUMNOS.Alumno, ;
+		NTA_DOCUMENTOS.Documento, ;
+		NTA_DOCUMENTOSXALUMNO.EstadoDocumento, ;
+		IIF(EMPTY(NTA_DOCUMENTOSXALUMNO.FechaEntrega), SPACE(10), TRANSFORM(DTOS(NTA_DOCUMENTOSXALUMNO.FechaEntrega), '@R 9999-99-99')) AS FechaEntrega, ;
+		IIF(EMPTY(NTA_DOCUMENTOSXALUMNO.FechaDevolucion), SPACE(10), TRANSFORM(DTOS(NTA_DOCUMENTOSXALUMNO.FechaDevolucion), '@R 9999-99-99')) AS FechaDevolucion ;
+	FROM NTA_DOCUMENTOSXALUMNO ;
+		INNER JOIN NTA_ALUMNOS ;
+			ON NTA_DOCUMENTOSXALUMNO.IdAlumno = NTA_ALUMNOS.Id ;
+		INNER JOIN NTA_DOCUMENTOS ;
+			ON NTA_DOCUMENTOSXALUMNO.IdDocumento = NTA_DOCUMENTOS.Id ;
+	ORDER BY NTA_ALUMNOS.Alumno, NTA_DOCUMENTOS.Documento ;
+	INTO CURSOR curDOCXALM
+
+IF	_TALLY > 0
+	COPY TO DocumentosPorEstudiante TYPE XL5
+ENDIF
+	
+*!* PLANTELES POR ALUMNO
+SELECT NTA_MATRICULAS.Referencia, ;
+		NTA_MATRICULAS.Matricula, ;
+		NTA_ALUMNOS.Alumno, ;
+		NTA_GRADOS.Grado, ;
+		NTA_PLANTELES.Plantel, ;
+		CTB_CIUDADES.Ciudad, ;
+		NTA_PLANTELES.Ano, ;
+		NTA_PLANTELES.MotivoRetiro ;
+	FROM NTA_PLANTELES ;
+		INNER JOIN NTA_MATRICULAS ;
+			ON NTA_PLANTELES.IdMatricula = NTA_MATRICULAS.Id ;
+		INNER JOIN NTA_ALUMNOS ;
+			ON NTA_MATRICULAS.IdAlumno = NTA_ALUMNOS.Id ;
+		INNER JOIN NTA_GRADOS ;
+			ON NTA_MATRICULAS.IdGrado = NTA_GRADOS.Id ;
+		INNER JOIN CTB_CIUDADES ;
+			ON NTA_PLANTELES.IdCiudad = CTB_CIUDADES.Id ;
+	ORDER BY NTA_MATRICULAS.Referencia, NTA_MATRICULAS.Matricula ;
+	INTO CURSOR curPLANTELES
+
+IF	_TALLY > 0
+	COPY TO PlantelesPorEstudiante TYPE XL5
+ENDIF

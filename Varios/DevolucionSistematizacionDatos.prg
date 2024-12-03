@@ -1,0 +1,74 @@
+SELECT CTB_DOCUMENTOS.Fecha, ;
+		CTB_DOCUMENTOS.Documento, ;
+		NTA_CONCEPTOS.Concepto, ;
+		CTB_CUENTAS.Cuenta, ;
+		NTA_CONCEPTOS.Centro, ;
+		CTB_DIARIO.Valor, ;
+		CTB_NITS.Nombre AS Acudiente, ;
+		NTA_ALUMNOS.Nombre, ;
+		NTA_GRADOS.Grado, ;
+		IIF(NTA_GRADOS.Grado = '11', .F., .T.) AS Devolucion, ;
+		CAST(0 AS Y) AS VrDevolucion, ;
+		NTA_MATRICULAS.Id AS IdMatricula, ;
+		NTA_ALUMNOS.Id AS IdAlumno ;
+	FROM CTB_DIARIO ;
+		INNER JOIN CTB_DOCUMENTOS ;
+			ON IdDocumento = CTB_DOCUMENTOS.ID ;
+		INNER JOIN NTA_MATRICULAS ;
+			ON IdMatricula = NTA_MATRICULAS.ID ;
+		INNER JOIN NTA_ALUMNOS ;
+			ON NTA_MATRICULAS.IdAlumno = NTA_ALUMNOS.ID ;
+		INNER JOIN CTB_NITS ;
+			ON NTA_ALUMNOS.IdNitAcudiente = CTB_NITS.ID ;
+		INNER JOIN NTA_CONCEPTOS ;
+			ON CTB_DIARIO.IdConcepto = NTA_CONCEPTOS.ID ;
+		INNER JOIN CTB_CUENTAS ;
+			ON NTA_CONCEPTOS.IdCuenta = CTB_CUENTAS.ID ;
+		INNER JOIN NTA_GRADOS ;
+			ON NTA_MATRICULAS.IdGrado = NTA_GRADOS.ID ;
+	WHERE INLIST(NTA_CONCEPTOS.Concepto, '47', '55') AND ;
+		CTB_DOCUMENTOS.Fecha >= {^2013.05.01} AND ;
+		CTB_DIARIO.Imputacion = 2 ;
+	ORDER BY Acudiente ;
+	INTO CURSOR curDevolucion READWRITE
+
+BROWSE
+
+REPORT FORM Devolucion TO PRINTER PREVIEW 
+
+SELECT 0
+USE NTA_CONCEPTOSXALUMNO
+
+replace ALL Valor WITH 0 FOR IdConcepto = ??
+
+SELECT curDevolucion
+
+SCAN 
+
+	IF	curDevolucion.VrDevolucion > 0
+	
+		SELECT NTA_CONCEPTOSXALUMNO
+		
+		LOCATE FOR NTA_CONCEPTOSXALUMNO.IdMatricula = curDevolucion.IdMatricula
+		
+		IF	! FOUND()
+		
+			APPEND BLANK
+			REPLACE NTA_CONCEPTOSXALUMNO.IdMatricula WITH curDevolucion.IdMatricula, ;
+					NTA_CONCEPTOSXALUMNO.IdConcepto WITH ??
+		
+		ENDIF
+		
+		REPLACE NTA_CONCEPTOSXALUMNO.Valor WITH NTA_CONCEPTOSXALUMNO.Valor + curDevolucion.VrDevolucion
+	
+	ENDIF
+	
+	SELECT curDevolucion
+	
+ENDSCAN
+
+
+
+cta: 4160050500  (47)
+	 2705450400  (55)
+

@@ -1,0 +1,32 @@
+SET STEP ON 
+
+SELECT NTA_CONCEPTOS.Concepto, ;
+		NTA_CONCEPTOS.Nombre AS NombreConcepto, ;
+		NTA_CONCEPTOS.Aplica, ;
+		NTA_CONCEPTOS.Imputacion, ;
+		NTA_CONCEPTOS.CuentaDeudores, ;
+		NTA_CONCEPTOS.CentroDeudores, ;
+		NTA_CONCEPTOS.SubcentroDeudores, ;
+		NTA_CONCEPTOS.IdCuenta, ;
+		NTA_CONCEPTOS.Centro, ;
+		NTA_CONCEPTOS.Subcentro, ;
+		NTA_CONCEPTOS.IdConceptoPadre, ;
+		NTA_CONCEPTOS.EsDeducible, ;
+		NTA_CONCEPTOS.BasePagoExtemporaneo, ;
+		NTA_CONCEPTOS.ValorPE, ;
+		NTA_CONCEPTOS.ValorBP, ;
+		NTA_CONCEPTOS.ValorBS, ;
+		NTA_CONCEPTOS.ValorMD, ;
+		NTA_CONCEPTOS.Bloqueado, ;
+		NTA_CONCEPTOSXALUMNO.IdMatricula, ;
+		NTA_CONCEPTOSXALUMNO.Valor, ;
+		NTA_CONCEPTOSXALUMNO.PorcDcto ;
+	FROM NTA_CONCEPTOS ;
+		LEFT JOIN NTA_CONCEPTOSXALUMNO ;
+			ON NTA_CONCEPTOS.Id = NTA_CONCEPTOSXALUMNO.IdConcepto ;
+	ORDER BY NTA_CONCEPTOS.Concepto, NTA_CONCEPTOSXALUMNO.IdMatricula ;
+		
+	
+IF	_TALLY > 0
+	COPY TO ServiciosEducativos TYPE XL5
+ENDIF

@@ -1,0 +1,50 @@
+SELECT NTA_TRANSPORTE.Referencia, ;
+		NTA_TRANSPORTE.Ruta, ;
+		NTA_TRANSPORTE.Nombre, ;
+		EMPRESAS.Nit AS NitEmpresa, ;
+		EMPRESAS.Nombre AS NombreEmpresa, ;
+		EMPRESAS.Direccion AS DireccionEmpresa, ;
+		CIUDADESEMPRESAS.Ciudad AS CiudadEmpresa, ;
+		EMPRESAS.Telefonos AS TelefonosEmpresa, ;
+		EMPRESAS.Celular AS CelularEmpresa, ;
+		EMPRESAS.EMail AS EMailEmpresa, ;
+		IIF(EMPTY(EMPRESAS.FechaIngreso), SPACE(10), TRANSFORM(DTOS(EMPRESAS.FechaIngreso), '@R 9999-99-99')) AS FechaIngresoEmpresa, ;
+		CONDUCTORES.Nit AS NitConductor, ;
+		CONDUCTORES.Nombre AS NombreConductor, ;
+		CONDUCTORES.Direccion AS DireccionConductor, ;
+		CIUDADESCONDUCTORES.Ciudad AS CiudadConductor, ;
+		CONDUCTORES.Telefonos AS TelefonosConductor, ;
+		CONDUCTORES.Celular AS CelularConductor, ;
+		CONDUCTORES.EMail AS EMailConductor, ;
+		IIF(EMPTY(CONDUCTORES.FechaIngreso), SPACE(10), TRANSFORM(DTOS(CONDUCTORES.FechaIngreso), '@R 9999-99-99')) AS FechaIngresoConductor, ;
+		COORDINADORES.Nit AS NitCoordinador, ;
+		COORDINADORES.Nombre AS NombreCoordinador, ;
+		COORDINADORES.Direccion AS DireccionCoordinador, ;
+		CIUDADESCOORDINADORES.Ciudad AS CiudadCoordinador, ;
+		COORDINADORES.Telefonos AS TelefonosCoordinador, ;
+		COORDINADORES.Celular AS CelularCoordinador, ;
+		COORDINADORES.EMail AS EMailCoordinador, ;
+		IIF(EMPTY(COORDINADORES.FechaIngreso), SPACE(10), TRANSFORM(DTOS(COORDINADORES.FechaIngreso), '@R 9999-99-99')) AS FechaIngresoCoordinador, ;
+		NTA_TRANSPORTE.Cupos, ;
+		NTA_TRANSPORTE.Placa, ;
+		NTA_TRANSPORTE.Valor ;
+	FROM NTA_TRANSPORTE ;
+		INNER JOIN CTB_NITS AS EMPRESAS ;
+			ON NTA_TRANSPORTE.IdNitEmpresa = EMPRESAS.Id ;
+		INNER JOIN CTB_NITS AS CONDUCTORES ;
+			ON NTA_TRANSPORTE.IdNitConductor = CONDUCTORES.Id ;
+		INNER JOIN CTB_NITS AS COORDINADORES ;
+			ON NTA_TRANSPORTE.IdNitCoordinador = COORDINADORES.Id ;
+		LEFT JOIN CTB_CIUDADES AS CIUDADESEMPRESAS ;
+			ON EMPRESAS.IdCiudad = CIUDADESEMPRESAS.Id ;
+		LEFT JOIN CTB_CIUDADES AS CIUDADESCONDUCTORES ;
+			ON CONDUCTORES.IdCiudad = CIUDADESCONDUCTORES.Id ;
+		LEFT JOIN CTB_CIUDADES AS CIUDADESCOORDINADORES ;
+			ON COORDINADORES.IdCiudad = CIUDADESCOORDINADORES.Id ;
+	WHERE ! EMPTY(NTA_TRANSPORTE.Referencia) ;
+	ORDER BY NTA_TRANSPORTE.Referencia, NTA_TRANSPORTE.Ruta ;
+	INTO CURSOR curRUTAS
+
+IF	_TALLY > 0
+	COPY TO Rutas TYPE XL5
+ENDIF

@@ -1,0 +1,38 @@
+Contrato de Licencia para el Usuario Final de Software System Key
+
+Visual Key 8.0 
+
+IMPORTANTE: LEA DETENIDAMENTE. Este Contrato de Licencia para el Usuario Final System Key, es un contrato legal entre usted (ya sea persona física o una entidad individual) y System Key de Colombia Ltda. para el software que lo acompaña, material impreso y documentación “en línea” o electrónica (“SOFTWARE”). Al instalar, copiar o de otro modo utilizar el SOFTWARE acepta quedar obligado por los términos de este Contrato de Licencia.
+
+Licencia de Producto de Software
+El SOFTWARE está protegido por leyes de derechos de autor y por tratados internacionales sobre derechos de autor, así como por otras leyes y tratados sobre propiedad intelectual. El SOFTWARE se concede bajo licencia, no se vende.
+
+1. CONCESIÓN DE LICENCIA. El presente Contrato de Licencia le otorga los siguientes derechos:
+? Software. Podrá instalar y usar una copia del SOFTWARE en un solo computador.
+? Almacenamiento / uso en la red. Podrá almacenar o instalar una copia del SOFTWARE en un dispositivo de almacenamiento, tal como un servidor de red, que solamente utilice para instalar o ejecutar el SOFTWARE en sus demás computadores en una red interna; sin embargo, deberá adquirir y asignar una licencia para cada computador en que se instale o se ejecute el SOFTWARE desde un dispositivo de almacenamiento, y cada computador deberá utilizar el SOFTWARE. Una licencia para el SOFTWARE no podrá compartirse o usarse simultáneamente en diferentes computadores.
+
+2. DESCRIPCIÓN DE LOS DERECHOS Y LIMITACIONES.
+? Limitación de ingeniería inversa, descompilación y desensamblaje. Está prohibido utilizar técnicas de ingeniería inversa, descompilar o desensamblar el SOFTWARE, salvo que dicha actividad esté expresamente permitida por la ley aplicable, no obstante esta prohibición.
+? Separación de los componentes. El SOFTWARE se concede en licencia como un producto único. Las partes que lo componen no podrán separarse para usarse en más de un PC.
+? Alquiler. Está prohibido alquilar o arrendar el SOFTWARE.
+? Transferencia de software. Todos los derechos otorgados por el presente Contrato de Licencia sólo se pueden transferir de manera permanente con la condición de que no retenga copia alguna, de que transfiera el SOFTWARE completo (incluyendo todos los componentes, medios y materiales impresos, cualquier actualización, el presente Contrato de Licencia y, de ser aplicable, los Certificados de Autenticidad) conjuntamente con el EQUIPAMIENTO, y de que el receptor acepte quedar obligado por los términos del presente Contrato de Licencia. Si la porción del SOFTWARE es una actualización, cualquier transferencia deberá incluir todas las versiones previas del SOFTWARE.
+? Terminación. Sin perjuicio de cualquier derecho, System Key de Colombia Ltda. puede terminar este Contrato de Licencia si usted no cumple con los términos y condiciones del mismo. En dicho caso, deberá destruir todas las copias del SOFTWARE y todos sus componentes.
+
+3. DERECHOS DE AUTOR. Todos los títulos y derechos de autor sobre el SOFTWARE (incluyendo sin limitación las imágenes, fotografías, figuras animadas, vídeo, música, texto y “applets” o subprogramas incorporados al SOFTWARE), los materiales impresos que lo acompañan y otras copias del SOFTWARE, son propiedad de System Key de Colombia Ltda.. El SOFTWARE está protegido por leyes de derechos de autor y por disposiciones de tratados internacionales. Por consiguiente, deberá tratar el SOFTWARE como a cualquier otro material sujeto a derechos de autor, excepto que podrá (a) efectuar una copia del SOFTWARE solamente a los fines de copia de seguridad (copia de respaldo) o archivo, o (b) instalar el SOFTWARE en un solo computador siempre que mantenga el original solamente para fines de copia de seguridad o archivo. No podrá copiar los materiales impresos que acompañan al SOFTWARE.
+
+4. SOFTWARE DE MEDIO DUAL. Es posible que reciba el SOFTWARE en más de un medio. Independientemente del tipo o tamaño del medio que reciba, sólo podrá usar el medio que sea apropiado para su computador. No podrá usar o instalar el otro medio en otro computador. El medio adicional no podrá prestarse, alquilarse, arrendarse ni de otra forma transferirse a otro usuario, excepto como una parte de una transferencia permanente del SOFTWARE, conforme a lo establecido anteriormente.
+
+GARANTÍA LIMITADA. System Key de Colombia Ltda. garantiza (a) que el SOFTWARE podrá ser operado substancialmente de acuerdo a lo indicado por el o los manuales del producto incluidos en el paquete, por un período de noventa (90) días contados a partir de la fecha de entrega; y (b) que cualquier equipamiento o parte de equipamiento provista por System Key de Colombia Ltda. que acompañe al SOFTWARE (en adelante “EQUIPAMIENTO”) estará libre de defectos de material o de mano de obra, bajo condiciones de uso y servicio normales, por un período de un (1) año contado a partir de la fecha de entrega. Cualquier garantía implícita sobre el SOFTWARE o el EQUIPAMIENTO estará limitada a noventa (90) días y un (1) año respectivamente.
+
+RECURSOS DEL LICENCIATARIO. La sola obligación de System Key de Colombia Ltda. y el único recurso de usted será, a elección de System Key de Colombia Ltda., ya sea: (a) rembolsar el precio pagado; o (b) reparar o reemplazar el SOFTWARE o el EQUIPAMIENTO que no cumpla con la Garantía Limitada de System Key de Colombia Ltda. y que sea devuelto a System Key de Colombia Ltda. con una copia de su recibo. Esta Garantía Limitada quedará sin efecto si el mal funcionamiento del SOFTWARE o el EQUIPAMIENTO es resultado de accidente, abuso o uso indebido, Cualquier SOFTWARE o EQUIPAMIENTO que haya sido sustituido estará garantizado por el resto del término de la garantía original o por treinta (30) días; el que resulte mayor.
+
+INEXISTENCIA DE OTRAS GARANTÍAS. SYSTEM KEY DE COLOMBIA LTDA. NO RECONOCE OTRAS GARANTÍAS, EXPRESAS O IMPLICITAS, INCLUYENDO –PERO NO LIMITÁNDOSE A ELLAS- GARANTÍAS IMPLÍCITAS DE COMERCIALIZACIÓN Y ADECUACIÓN A UN PROPÓSITO EN ESPECIAL, CON RESPECTO AL SOFTWARE, EL O LOS MANUALES Y MATERIALES IMPRESOS, Y CUALQUIER EQUIPAMIENTO QUE LO ACOMPAÑE. ESTA GARANTÍA LIMITADA LO OTORGA A USTED DERECHOS ESPECÍFICOS.
+
+AUSENCIA DE RESPONSABILIDAD POR DAÑOS RESULTANTES. EN NINGÚN CASO, SYSTEM KEY DE COLOMBIA LTDA. SERÁ RESPONSABLE POR CUALQUIER OTRO DAÑO (INCLUYENDO, SIN LIMITACIÓN, DAÑOS POR PÉRDIDA DE GANANCIAS EN LOS NEGOCIOS, INTERRUPCIÓN DE LOS NEGOCIOS, PÉRDIDA DE INFORMACIÓN COMERCIAL O CUALQUIER OTRA PÉRDIDA PECUNIARIA) QUE PUDIERE SURGIR DEL USO O IMPOSIBILIDAD DE USO DEL SOFTWARE, AÚN CUANDO SYSTEM KEY DE COLOMBIA LTDA. HAYA SIDO ADVERTIDA DE LA POSIBILIDAD DE DICHOS DAÑOS. EN CUALQUIER CASO, LA COMPLETA RESPONSABILIDAD CONFORME A CUALQUIER CLÁUSULA DE ESTE CONTRATO ESTARÁ LIMITADA AL MONTO REAL PAGADO POR USTED POR ESTE SOFTWARE.
+
+
+
+System Key de Colombia Ltda.
+
+
+

@@ -1,0 +1,8 @@
+[DATOS]
+TablaEmpresas=D:\VK\DATOS\EMPRESAS.DBF
+MenuInicio=CARTERA
+LogoIni=0
+Impresora=HP LaserJet Professional P 1102w                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+[USUARIO]
+CodigoUsuario=ADMIN,10
+CodigoEmpresa=001

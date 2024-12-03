@@ -1,0 +1,126 @@
+SELECT 'E' AS TipoReg, ;
+		CTB_NITS.TipoNit, ;
+		CTB_NITS.Nit, ;
+		CTB_NITS.Nombre, ;
+		CTB_NITS.Direccion, ;
+		CTB_CIUDADES.Ciudad, ;
+		CTB_NITS.Telefonos, ;
+		CTB_NITS.Celular, ;
+		CTB_NITS.EMail, ;
+		CTB_NITS.Profesion, ;
+		IIF(CTB_NITS.EsExalumno, 'SI', '  ') AS EsExalumno, ;
+		CTB_NITS.Promocion, ;
+		CTB_NITS.Parentesco, ;
+		CTB_NITS.BancoDeudor, ;
+		CTB_NITS.CuentaDeudor, ;
+		NOM_CARGOS.Cargo, ;
+		NOM_CARGOS.Nombre AS NombreCargo, ;
+		NOM_CARGOS.SueldoMinimo, ;
+		NOM_CARGOS.SueldoMaximo, ;
+		CARGOS.Cargo AS CargoSuperior, ;
+		NOM_CATEGORIAS.Categoria, ;
+		NOM_CATEGORIAS.Nombre AS NombreCategoria, ;
+		CTB_NITS.TipoContrato, ;
+		CTB_NITS.SueldoBasico, ;
+		CTB_NITS.ModalidadTrabajo, ;
+		CTB_NITS.RegimenCesantias, ;
+		CTB_NITS.Genero, ;
+		CTB_NITS.EstadoCivil, ;
+		IIF(EMPTY(CTB_NITS.FechaNacimiento), SPACE(10), TRANSFORM(DTOS(CTB_NITS.FechaNacimiento), '@R 9999-99-99')) AS FechaNacimiento, ;
+		IIF(EMPTY(CTB_NITS.FechaIngreso), SPACE(10), TRANSFORM(DTOS(CTB_NITS.FechaIngreso), '@R 9999-99-99')) AS FechaIngreso ;
+	FROM CTB_NITS ;
+		LEFT JOIN NOM_CARGOS ;
+			ON CTB_NITS.IdCargo = NOM_CARGOS.Id ;
+		LEFT JOIN NOM_CARGOS AS CARGOS ;
+			ON NOM_CARGOS.IdCargoSuperior = CARGOS.Id ;
+		LEFT JOIN NOM_CATEGORIAS;
+			ON CTB_NITS.IdCategoriaEmpleado = NOM_CATEGORIAS.Id ;
+		LEFT JOIN CTB_CIUDADES ;
+			ON CTB_NITS.IdCiudad = CTB_CIUDADES.Id ;
+	WHERE CTB_NITS.EsEmpleado ;
+	ORDER BY CTB_NITS.Nit ;
+	INTO CURSOR curNITS
+
+IF	_TALLY > 0
+	COPY TO NitsEmpleados TYPE XL5
+ENDIF
+
+SELECT NTA_ASIGNATURASXGRADO.Referencia, ;
+		NTA_GRADOS.Grado, ;
+		NTA_GRADOS.Nombre AS NombreGrado, ;
+		IIF(NTA_GRADOS.NivelAcademico = 1, 'PE', ;
+			IIF(NTA_GRADOS.NivelAcademico = 2, 'BP', ;
+			IIF(NTA_GRADOS.NivelAcademico = 3, 'BS', ;
+			IIF(NTA_GRADOS.NivelAcademico = 4, 'MV', '  ')))) AS NivelAcademico, ;
+		NTA_GRADOS.TipoGrado, ;
+		NTA_ASIGNATURASXGRADO.Curso, ;
+		AREAS.Asignatura AS Area, ;
+		AREAS.Nombre AS NombreArea, ;
+		NTA_ASIGNATURAS.Asignatura, ;
+		NTA_ASIGNATURAS.Nombre AS NombreAsignatura, ;
+		NTA_ASIGNATURAS.TipoCiencia, ;
+		NVL(ASIGNATURASBASE.Asignatura, SPACE(10)) AS AsignaturaBase, ;
+		IIF(NTA_ASIGNATURASXGRADO.MetodoEvaluacion = 0, PADR('C', 2), ;
+			IIF(NTA_ASIGNATURASXGRADO.MetodoEvaluacion = 1, PADR('A', 2), ;
+			IIF(NTA_ASIGNATURASXGRADO.MetodoEvaluacion = 2, PADR('N', 2), ;
+			IIF(NTA_ASIGNATURASXGRADO.MetodoEvaluacion = 3, PADR('CA', 2), ;
+			IIF(NTA_ASIGNATURASXGRADO.MetodoEvaluacion = 4, PADR('CN', 2), ;
+			IIF(NTA_ASIGNATURASXGRADO.MetodoEvaluacion = 5, PADR('LA', 2), ;
+			IIF(NTA_ASIGNATURASXGRADO.MetodoEvaluacion = 6, PADR('LN', 2), SPACE(25)))))))) AS MetodoEvaluacion, ;
+		NTA_ASIGNATURASXGRADO.IntensidadHorariaSemanal, ;
+		NTA_ASIGNATURASXGRADO.MinimoFallas, ;
+		IIF(NTA_ASIGNATURASXGRADO.TipoAsignatura = 0, PADR('E', 2), ;
+			IIF(NTA_ASIGNATURASXGRADO.TipoAsignatura = 1, PADR('R', 2), ;
+			IIF(NTA_ASIGNATURASXGRADO.TipoAsignatura = 2, PADR('BE', 2), ;
+			IIF(NTA_ASIGNATURASXGRADO.TipoAsignatura = 3, PADR('V', 2), SPACE(15))))) AS TipoAsignatura, ;
+		NTA_ASIGNATURASXGRADO.PorcentajeCarga, ;
+		IIF(! EMPTY(NTA_ASIGNATURASXGRADO.IdNitTitular), CTB_NITS.Nit, 000000000000) AS NitTitular, ;
+		IIF(! EMPTY(NTA_ASIGNATURASXGRADO.IdNitTitular), CTB_NITS.Nombre, SPACE(40)) AS NombreTitular, ;
+		IIF(NTA_ASIGNATURASXGRADO.EsDirector, 'SI', '  ') AS EsDirector, ;
+		NOM_CARGOS.Cargo AS CargoTitular, ;
+		NOM_CARGOS.Nombre AS NombreCargoTitular, ;
+		IIF(! EMPTY(NTA_ASIGNATURASXGRADO.IdNitCoordinadorArea), COORDINADORESAREA.Nit, 000000000000) AS NitCoordinadorArea, ;
+		IIF(! EMPTY(NTA_ASIGNATURASXGRADO.IdNitCoordinadorArea), COORDINADORESAREA.Nombre, SPACE(40)) AS NombreCoordinadorArea, ;
+		IIF(! EMPTY(COORDINADORESAREA.IdCargo), CARGOSCOORDINADORESAREA.Cargo, '') AS CargoCoordinadorArea, ;
+		IIF(! EMPTY(COORDINADORESAREA.IdCargo), CARGOSCOORDINADORESAREA.Nombre, '') AS NombreCargoCoordinadorArea, ;
+		IIF(! EMPTY(NTA_ASIGNATURASXGRADO.IdNitCoordinadorSeccion), COORDINADORESSECCION.Nit, 000000000000) AS NitCoordinadorSeccion, ;
+		IIF(! EMPTY(NTA_ASIGNATURASXGRADO.IdNitCoordinadorSeccion), COORDINADORESSECCION.Nombre, SPACE(40)) AS NombreCoordinadorSeccion, ;
+		IIF(! EMPTY(COORDINADORESSECCION.IdCargo), CARGOSCOORDINADORESSECCION.Cargo, '') AS CargoCoordinadorSeccion, ;
+		IIF(! EMPTY(COORDINADORESSECCION.IdCargo), CARGOSCOORDINADORESSECCION.Nombre, '') AS NombreCargoCoordinadorSeccion, ;
+		NTA_ASIGNATURASXGRADO.TipoAsignacion, ;
+		IIF(NTA_ASIGNATURASXGRADO.ExcluyeEvaluacionDefinitiva, 'S', 'N') AS ExcluyeEvaluacionDedinitiva, ;
+		NTA_ASIGNATURASXGRADO.Color, ;
+		IIF(NTA_ASIGNATURASXGRADO.RecuperaEnSemana1, 'S', 'N') AS RecuperaEnSemana1, ;
+		IIF(NTA_ASIGNATURASXGRADO.RecuperaEnSemana2, 'S', 'N') AS RecuperaEnSemana2, ;
+		IIF(NTA_ASIGNATURASXGRADO.RecuperaEnSemana3, 'S', 'N') AS RecuperaEnSemana3, ;
+		IIF(NTA_ASIGNATURASXGRADO.RecuperaEnSemana4, 'S', 'N') AS RecuperaEnSemana4 ;
+	FROM NTA_ASIGNATURASXGRADO ;
+		INNER JOIN NTA_GRADOS ;
+			ON NTA_ASIGNATURASXGRADO.IdGrado = NTA_GRADOS.Id ;
+		INNER JOIN NTA_ASIGNATURAS ;
+			ON NTA_ASIGNATURASXGRADO.IdAsignatura = NTA_ASIGNATURAS.Id ;
+		INNER JOIN NTA_ASIGNATURAS AS AREAS ;
+			ON LEFT(NTA_ASIGNATURAS.Asignatura, 2) == ALLTRIM(AREAS.Asignatura) ;
+		LEFT JOIN NTA_ASIGNATURASXGRADO AS PENSUMBASE ;
+			ON NTA_ASIGNATURASXGRADO.IdPensumBase = PENSUMBASE.Id ;
+		LEFT JOIN NTA_ASIGNATURAS AS ASIGNATURASBASE ;
+			ON PENSUMBASE.IdAsignatura = ASIGNATURASBASE.Id ;
+		LEFT JOIN CTB_NITS ;
+			ON NTA_ASIGNATURASXGRADO.IdNitTitular = CTB_NITS.Id ;
+		LEFT JOIN NOM_CARGOS ;
+			ON CTB_NITS.IdCargo = NOM_CARGOS.Id ;
+		LEFT JOIN CTB_NITS AS COORDINADORESAREA ;
+			ON NTA_ASIGNATURASXGRADO.IdNitCoordinadorArea = COORDINADORESAREA.Id ;
+		LEFT JOIN NOM_CARGOS AS CARGOSCOORDINADORESAREA ;
+			ON COORDINADORESAREA.IdCargo = CARGOSCOORDINADORESAREA.Id ;
+		LEFT JOIN CTB_NITS AS COORDINADORESSECCION ;
+			ON NTA_ASIGNATURASXGRADO.IdNitCoordinadorSeccion = COORDINADORESSECCION.Id ;
+		LEFT JOIN NOM_CARGOS AS CARGOSCOORDINADORESSECCION ;
+			ON COORDINADORESSECCION.IdCargo = CARGOSCOORDINADORESSECCION.Id ;
+	WHERE ! EMPTY(NTA_ASIGNATURASXGRADO.Referencia) ;
+	ORDER BY 1, 2, 6, 7, 9 ;
+	INTO CURSOR curTEMPORAL
+	
+IF	_TALLY > 0
+	COPY TO PensumAcademico TYPE XL5
+ENDIF
